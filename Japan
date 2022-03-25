@@ -7,4 +7,4 @@ Input Format
 The CITY table is described as follows: CITY.jpg
 
 ########
-Japan Population
+select sum(popuplation) from city where countrycode='JPN';
