@@ -1,0 +1,10 @@
+# HackerRank_SQL
+Solution of HackerRank SQL(Prepare by Topic)
+Query a count of the number of cities in CITY having a Population larger than 100000.
+
+Input Format
+
+The CITY table is described as follows: CITY.jpg
+#################
+
+select count(name) from city where population>100000;
