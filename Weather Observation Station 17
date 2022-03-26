@@ -1,0 +1,6 @@
+# HackerRank_SQL
+Solution of HackerRank SQL(Prepare by Topic)
+#Query the Western Longitude (LONG_W)where the smallest Northern Latitude (LAT_N) in STATION is greater than 38.7780. Round your answer to  decimal places.
+
+######
+select round(LONG_W,4) from station where LAT_N in (select min(t.LAT_N) from (select LAT_N from station where LAT_N > 38.7780) t);
