@@ -1,0 +1,19 @@
+# HackerRank_SQL
+Solution of HackerRank SQL(Prepare by Topic)
+A median is defined as a number separating the higher half of a data set from the lower half. Query the median of the Northern Latitudes (LAT_N) from STATION and round your answer to  decimal places.
+
+Input Format
+
+The STATION table is described as follows:
+
+Station.jpg
+
+where LAT_N is the northern latitude and LONG_W is the western longitude.
+########
+
+set @row_id=-1;
+select round(avg(s.lat_n),4) as median from
+(
+    select @row_id:=+@row_id +1 as row_index, lat_n from station order by lat_n
+) as s
+where s.row_index in (floor(@row_id/2),ceil(@row_id/2));
